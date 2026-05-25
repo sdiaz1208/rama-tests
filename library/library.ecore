@@ -6,8 +6,8 @@
         eType="#//Writer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="books" upperBound="-1"
         eType="#//Book" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="publishers" upperBound="-1"
-        eType="#//Publisher" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//Member" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Writer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -16,14 +16,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Book">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="100"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearOfPublication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//BookCategory"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" eType="#//Publisher"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Publisher">
+  <eClassifiers xsi:type="ecore:EClass" name="Member">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="membershipId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="borrowedBooks" upperBound="-1"
+        eType="#//Book"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BookCategory">
     <eLiterals name="History"/>
